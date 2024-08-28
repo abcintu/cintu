@@ -9,8 +9,8 @@
 html, body {
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centre horizontalement le contenu */
+    align-items: center; /* Centre verticalement le contenu */
     background-color: #0A0A30; /* Modifier la couleur de fond selon vos préférences */
 }
 
@@ -21,6 +21,8 @@ html, body {
 
 /* Image du logo */
 .container img {
-    max-width: 100%;
-    height: auto;
+    max-width: 50%; /* Réduit la largeur du logo à 50% de sa taille d'origine */
+    height: auto; /* Conserve le ratio de l'image pour éviter toute déformation */
+    display: block; /* Centre l'image dans le conteneur */
+    margin: 0 auto; /* Centre horizontalement l'image à l'intérieur du conteneur */
 }
