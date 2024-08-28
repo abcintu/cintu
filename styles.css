@@ -1,0 +1,26 @@
+/* Réinitialisation des marges et des paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Appliquer une hauteur de 100% à l'html et au body */
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0A0A30; /* Modifier la couleur de fond selon vos préférences */
+}
+
+/* Container qui contient le logo */
+.container {
+    text-align: center;
+}
+
+/* Image du logo */
+.container img {
+    max-width: 100%;
+    height: auto;
+}
