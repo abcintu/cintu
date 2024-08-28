@@ -7,7 +7,7 @@
 
 /* Appliquer une hauteur de 100% à l'html et au body */
 html, body {
-    height: 50%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
