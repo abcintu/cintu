@@ -26,3 +26,20 @@ html, body {
     display: block; /* Centre l'image dans le conteneur */
     margin: 0 auto; /* Centre horizontalement l'image à l'intérieur du conteneur */
 }
+
+/* Animation CSS ajoutée */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.container img {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
