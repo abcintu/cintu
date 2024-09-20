@@ -1,33 +1,120 @@
-/* Réinitialisation des marges et des paddings */
+/* Global reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Appliquer une hauteur de 100% à l'html et au body */
+/* Apply 100% height to the html and body */
 html, body {
     height: 100%;
-    display: flex;
-    justify-content: center; /* Centre horizontalement le contenu */
-    align-items: center; /* Centre verticalement le contenu */
-    background-color: #0A0A30; /* Modifier la couleur de fond selon vos préférences */
+    background-color: #0A0A30;
+    color: white;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* Container qui contient le logo */
-.container {
+/* Floating Navigation Button */
+#nav-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: 2px solid #ccc;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 10px;
+    color: #ccc;
+}
+
+#nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Hidden Navigation Menu */
+#nav-menu {
+    display: none;
+    position: fixed;
+    right: 20px;
+    top: 60px;
+    background-color: #0A0A30;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+#nav-menu ul {
+    list-style: none;
+}
+
+#nav-menu ul li {
+    margin-bottom: 10px;
+}
+
+#nav-menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#nav-menu ul li a:hover {
+    color: #DAA520;
+}
+
+/* Floating Logo in the top-left corner of each section (except home) */
+.section-logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    max-width: 50px;
+    height: auto;
+    z-index: 1000;
+    display: none;
+    border-radius: 10px; /* This makes the logo perfectly circular */
+    background-color: transparent; /* Optional: Set a background color if needed */
+}
+
+.section-logo.show {
+    display: block; /* Show when the second section is reached */
+}
+
+/* Logo Section (Landing Page) */
+.logo-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
     text-align: center;
 }
 
-/* Image du logo */
+/* Logo styling */
 .container img {
-    max-width: 50%; /* Réduit la largeur du logo à 50% de sa taille d'origine */
-    height: auto; /* Conserve le ratio de l'image pour éviter toute déformation */
-    display: block; /* Centre l'image dans le conteneur */
-    margin: 0 auto; /* Centre horizontalement l'image à l'intérieur du conteneur */
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    position: relative;
+    z-index: 1;
 }
 
-/* Animation CSS ajoutée */
+/* Logo text styling */
+#logo-text {
+    font-size: 2.5rem;
+    color: white;
+    position: absolute;
+    top: 60%;
+    z-index: 2;
+    animation-delay: 0.2s;
+}
+
+/* Fade-in Animation */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -39,7 +126,176 @@ html, body {
     }
 }
 
-.container img {
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
+/* Section styling */
+.section {
+    position: relative;
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+}
+
+/* About Section */
+.about-content {
+    max-width: 800px;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin: 0 auto;
+}
+
+.about-content ul {
+    list-style: disc;
+    padding-left: 40px;
+    margin-top: 20px;
+}
+
+.about-content ul li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Pourquoi choisir Cintu Section */
+.why-choose-content {
+    max-width: 800px;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-top: 20px;
+    margin: 0 auto;
+}
+
+.why-choose-content ul {
+    list-style: disc;
+    padding-left: 40px;
+    margin-top: 20px;
+}
+
+.why-choose-content ul li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #0A0A30;
+    color: white;
+    text-align: center;
+}
+
+.contact-details a {
+    color: white;
+}
+
+.contact-details a:hover {
+    color: #DAA520;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-column {
+    flex: 1;
+    max-width: 45%;
+    text-align: center;
+    margin: 10px;
+}
+
+.contact-column a {
+    color: white;
+}
+
+.contact-column a:hover {
+    color: #DAA520;
+}
+
+/* Adjust the spacing between section titles */
+.section h2 {
+    margin-bottom: 20px; /* Adjust this value to increase/decrease space */
+}
+
+.section h1 p {
+    margin-top: 30px; /* Add spacing above the paragraph */
+    margin-bottom: 20px; /* Adjust this value if more space is needed between the title and paragraph */
+    font-size: 1.5rem; /* Optional: adjust font size for emphasis */
+}
+/* Styling for What to Expect Section */
+.what-expect-content {
+    max-width: 800px;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 20px;
+}
+
+.what-expect-content ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.what-expect-content ul li {
+    margin-bottom: 15px;
+}
+
+/* Profil photo circulaire */
+.profile-photo {
+    width: 150px; /* Taille du cercle */
+    height: 150px;
+    border-radius: 50%; /* Crée un cercle */
+    object-fit: cover; /* S'assure que l'image s'ajuste bien dans le cercle */
+    border: 2px solid #0A0A30; /* Bordure fine */
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre pour l'effet */
+}
+
+/* Contact section */
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contact-column {
+    flex: 1;
+    max-width: 40%; /* Réduit légèrement la largeur des colonnes pour plus d'espace */
+    text-align: center;
+    margin: 10px 40px; /* Ajoute plus de marge entre les colonnes */
+}
+
+.contact-column a {
+    color: white;
+}
+
+.contact-column a:hover {
+    color: #DAA520;
+}
+
+/* Hide the logo in the Contact section */
+#contact .section-logo {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-color: #0A0A30;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
