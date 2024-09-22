@@ -36,7 +36,6 @@
         </div>
     </section>
 
-
     <!-- Qui sommes-nous Section -->
     <section id="about" class="section">
         <h2>Qui sommes-nous ?</h2>
@@ -58,14 +57,14 @@
         <h2>Une approche différenciante,</h2>
         <h1>pour pérenniser une PME française.</h1>
         <div class="what-expect-content">
-            <p>Le projet de <strong>Cintu Transmission présente des avantages pour le cédant</strong> par rapport à des processus de vente classiques (concurrents ou des fonds d’investissement traditionnels), avec notamment :</p>
+            <p>Le projet de <strong>Cintu Transmission présente des avantages pour le cédant</strong> par rapport à des processus de vente classiques (concurrents ou des fonds d’investissement traditionnels), avec notamment&nbsp;:</p>
             <p><ul>
                 <li><strong>La protection des intérêts des employés</strong>, en privilégiant la croissance à la réduction des coûts.</li>
                 <li><strong>Le respect de l’héritage du cédant</strong>, en préservant la culture et les valeurs de la société, les repreneurs s’appuieront sur ces fondations pour bâtir le futur.</li>
                 <li><strong>La confiance et la clarté sur l’équipe dirigeante de reprise</strong>, qui deviendra actionnaire majoritaire et conservera une grande autonomie.</li>
                 <li><strong>Une transition saine</strong>, et non une révolution, avec l’aide d’une période de transition et d’accompagnement du cédant, essentielle au projet.</li>
                 <li><strong>L’engagement sur le long-terme</strong>, voire très long terme des repreneurs, qui n’ont pas d’horizon temporel de liquidité.</li>
-                <li><strong>Un projet de vie porté par deux amis aux valeurs fortes</strong>  : humilité, positivité, résilience et discipline.</li>
+                <li><strong>Un projet de vie porté par deux amis aux valeurs fortes</strong> : humilité, positivité, résilience et discipline.</li>
             </ul> 
         </p>
         </div>
@@ -87,19 +86,19 @@
         </div>
     </section>
 
-<!-- Contact Section -->
-<section id="contact" class="section">
-    <h2>Contactez-nous</h2>
-    <div class="contact-container">
-        <div class="contact-column">
-            <img src="amour_francois_photo.jpeg" alt="Amour and François" class="contact-photo">
-            <p class="contact-info"><a href="https://www.linkedin.com/company/amourbuidine" target="_blank">Amour BUIDINE</a> & <a href="https://www.linkedin.com/company/francois-frigara" target="_blank">François FRIGARA</a></p>
-            <p class="contact-info">Co-fondateurs</p>
-            <p class="contact-info"><a href="mailto:transmission@cintu.fr">transmission@cintu.fr</a></p>
-            <p class="contact-info"><a href="https://www.linkedin.com/company/cintu-transmission" target="_blank">LinkedIn</a></p>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contactez-nous</h2>
+        <div class="contact-container">
+            <div class="contact-column">
+                <img src="amour_francois_photo.jpeg" alt="Amour and François" class="contact-photo">
+                <p class="contact-info"><a href="https://www.linkedin.com/company/amourbuidine" target="_blank">Amour BUIDINE</a> & <a href="https://www.linkedin.com/company/francois-frigara" target="_blank">François FRIGARA</a></p>
+                <p class="contact-info">Co-fondateurs</p>
+                <p class="contact-info"><a href="mailto:transmission@cintu.fr">transmission@cintu.fr</a></p>
+                <p class="contact-info"><a href="https://www.linkedin.com/company/cintu-transmission" target="_blank">LinkedIn</a></p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <footer>
         <p>&copy; 2024 Cintu Transmission. Tous droits réservés.</p>
@@ -111,25 +110,25 @@
     <script>
         // Fonction pour afficher/masquer le logo en fonction du scroll
         window.addEventListener('scroll', function() {
-    var logo = document.querySelector('.section-logo');
-    var aboutSection = document.getElementById('about');
-    var contactSection = document.getElementById('contact');
-    var navButton = document.getElementById('nav-button');
+            var logo = document.querySelector('.section-logo');
+            var aboutSection = document.getElementById('about');
+            var contactSection = document.getElementById('contact');
+            var navButton = document.getElementById('nav-button');
 
-    // Obtenir la position actuelle du scroll
-    var currentPosition = window.scrollY;
+            // Obtenir la position actuelle du scroll
+            var currentPosition = window.scrollY;
 
-    // Obtenir la hauteur de la section "about" et "contact"
-    var aboutSectionTop = aboutSection.offsetTop;
-    var contactSectionTop = contactSection.offsetTop;
+            // Obtenir la hauteur de la section "about" et "contact"
+            var aboutSectionTop = aboutSection.offsetTop;
+            var contactSectionTop = contactSection.offsetTop;
 
-    // Afficher le logo après avoir quitté la page d'accueil et avant la section "Contactez-nous"
-    if (currentPosition >= aboutSectionTop && currentPosition < contactSectionTop) {
-        logo.style.display = 'block';
-    } else {
-        logo.style.display = 'none';
-    }
-});
-        </script>
-
+            // Afficher le logo après avoir quitté la page d'accueil et avant la section "Contactez-nous"
+            if (currentPosition >= aboutSectionTop && currentPosition < contactSectionTop) {
+                logo.style.display = 'block';
+            } else {
+                logo.style.display = 'none';
+            }
+        });
+    </script>
 </body>
+</html>

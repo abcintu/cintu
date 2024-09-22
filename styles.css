@@ -5,32 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Style global pour la mise en page mobile */
-@media only screen and (max-width: 768px) {
-    .why-choose-content ul li {
-        line-height: 1.8; /* Ajustement de l'espacement entre les lignes */
-        margin-bottom: 15px;
-    }
-
-    .why-choose-content p, 
-    .why-choose-content ul li {
-        word-wrap: break-word;
-        white-space: normal;
-    }
-
-    h2, h1 {
-        font-size: 1.6rem; /* Taille de police plus petite pour les titres */
-    }
-
-    .why-choose-content {
-        padding: 15px; /* Réduction des marges sur mobile */
-    }
-
-    .why-choose-content ul {
-        padding-left: 15px; /* Diminution du retrait pour les puces sur mobile */
-    }
-}
-
 /* Apply 100% height to the html and body */
 html, body {
     height: 100%;
@@ -90,7 +64,7 @@ html, body {
     color: #DAA520;
 }
 
-/* Floating Logo in the top-left corner of each section (except home) */
+/* Floating Logo */
 .section-logo {
     position: fixed;
     top: 20px;
@@ -99,26 +73,20 @@ html, body {
     height: auto;
     z-index: 1000;
     display: none;
-    border-radius: 10px; /* This makes the logo perfectly circular */
-    background-color: transparent; /* Optional: Set a background color if needed */
+    border-radius: 10px;
 }
 
-.section-logo.show {
-    display: block; /* Show when the second section is reached */
-}
-
-/* Logo Section (Landing Page) */
+/* Logo Section */
 .logo-section {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     flex-direction: column;
     text-align: center;
 }
 
-/* Logo styling */
+/* Logo Styling */
 .container img {
     max-width: 50%;
     height: auto;
@@ -126,17 +94,14 @@ html, body {
     margin: 0 auto;
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
-    position: relative;
-    z-index: 1;
 }
 
-/* Logo text styling */
+/* Logo Text Styling */
 #logo-text {
     font-size: 2.5rem;
     color: white;
     position: absolute;
     top: 60%;
-    z-index: 2;
     animation-delay: 0.2s;
 }
 
@@ -152,9 +117,8 @@ html, body {
     }
 }
 
-/* Section styling */
+/* Section Styling */
 .section {
-    position: relative;
     padding: 100px 20px;
     min-height: 100vh;
     display: flex;
@@ -166,48 +130,31 @@ html, body {
     text-align: center;
 }
 
+
 /* About Section */
-.about-content {
+.about-content, .why-choose-content, .what-expect-content {
     max-width: 800px;
     text-align: left;
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #333;
     margin: 0 auto;
 }
 
-.about-content ul {
+.about-content ul, .why-choose-content ul, .what-expect-content ul {
     list-style: disc;
     padding-left: 40px;
     margin-top: 20px;
 }
 
-.about-content ul li {
+.about-content ul li, .why-choose-content ul li, .what-expect-content ul li {
     margin-bottom: 15px;
     line-height: 1.6;
 }
 
-/* Pourquoi choisir Cintu Section */
-.why-choose-content {
-    max-width: 800px;
-    text-align: left;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #333;
-    margin-top: 20px;
-    margin: 0 auto;
+#what-expect h1 {
+    margin-bottom: 20px; /* Pour ajouter plus d'espace sous le h2 */
 }
 
-.why-choose-content ul {
-    list-style: disc;
-    padding-left: 40px;
-    margin-top: 20px;
-}
-
-.why-choose-content ul li {
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
 
 /* Contact Section */
 .contact-container {
@@ -223,109 +170,48 @@ html, body {
 }
 
 .contact-photo {
-    max-width: 100px; /* Adjust the size of the photo */
+    max-width: 300px;
     height: auto;
-    border-radius: 0; /* Remove the circular frame */
-    margin-bottom: 20px; /* Add space between the photo and company name */
+    margin-bottom: 20px;
 }
 
 .company-name {
-    font-size: 1.1rem; /* Same font size as Pourquoi choisir Cintu */
-    margin-bottom: 15px; /* Add space between Cintu Transmission and the contact details */
-    color: #0A0A30; /* Set the same color */
-    font-weight: bold; /* Set the font-weight to bold */
-    line-height: 1.6; /* Adjust line height for better readability */
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #0A0A30;
+    font-weight: bold;
+    line-height: 1.6;
 }
 
 .contact-info a {
-    font-size: 1.1rem; /* Same font size as Pourquoi choisir Cintu */
-    color: #0A0A30; /* Set text color to match */
+    font-size: 1.1rem;
+    color: #0A0A30;
     text-decoration: none;
-    line-height: 1.6; /* Adjust line height */
+    line-height: 1.6;
 }
 
 .contact-info a:hover {
-    color: #DAA520; /* Change color on hover */
+    color: #DAA520;
 }
 
-.contact-info {
-    margin-bottom: 10px; /* Add space between each contact info */
-    font-size: 1.1rem; /* Same font size as Pourquoi choisir Cintu */
-    color: #0A0A30; /* Set text color to match */
-    line-height: 1.6; /* Adjust line height */
-}
-
-/* Styles pour rendre l'image responsive */
-.contact-photo {
-    max-width: 300px; /* L'image ne dépassera jamais 100% de la largeur du conteneur */
-    height: auto; /* Conserve les proportions de l'image */
-    display: block; /* Évite les espaces blancs autour de l'image */
-    margin: 0 auto; /* Centre l'image */
-}
-
-/* Pour mobile - ajustement spécifique */
+/* Mobile Adjustments */
 @media only screen and (max-width: 768px) {
+    .why-choose-content ul li, .what-expect-content ul li {
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .why-choose-content, .what-expect-content {
+        padding: 15px;
+    }
+
+    h2, h1 {
+        font-size: 1.6rem;
+    }
+
     .contact-photo {
-        max-width: 90%; /* Réduction de la taille de l'image pour les petits écrans */
+        max-width: 80%;
     }
-    
-    .contact-section {
-        padding: 20px; /* Ajoute plus d'espace autour pour aérer le contenu */
-        text-align: center; /* Centre le texte pour améliorer la lisibilité sur mobile */
-    }
-
-    /* Ajuste le texte pour mobile */
-    .contact-section h2, .contact-section p {
-        font-size: 1.2rem; /* Réduction de la taille de la police pour les titres */
-        line-height: 1.5; /* Augmentation de l'espacement entre les lignes */
-    }
-}
-
-/* Adjust the spacing between section titles */
-.section h2 {
-    margin-bottom: 20px; /* Adjust this value to increase/decrease space */
-}
-
-.section h1 p {
-    margin-top: 30px; /* Add spacing above the paragraph */
-    margin-bottom: 20px; /* Adjust this value if more space is needed between the title and paragraph */
-    font-size: 1.5rem; /* Optional: adjust font size for emphasis */
-}
-/* Styling for What to Expect Section */
-.what-expect-content {
-    max-width: 800px;
-    text-align: left;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #333;
-    margin-top: 20px;
-}
-
-.what-expect-content ul {
-    list-style: disc;
-    padding-left: 20px;
-    margin-top: 20px;
-}
-
-.what-expect-content ul li {
-    margin-bottom: 15px;
-}
-
-/* Profil photo circulaire */
-.profile-photo {
-    width: 150px; /* Taille du cercle */
-    height: 150px;
-    border-radius: 50%; /* Crée un cercle */
-    object-fit: cover; /* S'assure que l'image s'ajuste bien dans le cercle */
-    border: 2px solid #0A0A30; /* Bordure fine */
-    margin-bottom: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre pour l'effet */
-}
-
-
-/* Hide the logo in the Contact section */
-#contact .section-logo {
-    display: none;
 }
 
 /* Footer */
@@ -334,7 +220,5 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
-    position: relative;
-    bottom: 0;
     width: 100%;
 }
