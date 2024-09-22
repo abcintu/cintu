@@ -5,6 +5,32 @@
     box-sizing: border-box;
 }
 
+/* Style global pour la mise en page mobile */
+@media only screen and (max-width: 768px) {
+    .why-choose-content ul li {
+        line-height: 1.8; /* Ajustement de l'espacement entre les lignes */
+        margin-bottom: 15px;
+    }
+
+    .why-choose-content p, 
+    .why-choose-content ul li {
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    h2, h1 {
+        font-size: 1.6rem; /* Taille de police plus petite pour les titres */
+    }
+
+    .why-choose-content {
+        padding: 15px; /* Réduction des marges sur mobile */
+    }
+
+    .why-choose-content ul {
+        padding-left: 15px; /* Diminution du retrait pour les puces sur mobile */
+    }
+}
+
 /* Apply 100% height to the html and body */
 html, body {
     height: 100%;
@@ -184,41 +210,52 @@ html, body {
 }
 
 /* Contact Section */
-#contact {
-    background-color: #0A0A30;
-    color: white;
-    text-align: center;
-}
-
-.contact-details a {
-    color: white;
-}
-
-.contact-details a:hover {
-    color: #DAA520;
-}
-
 .contact-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .contact-column {
-    flex: 1;
-    max-width: 45%;
     text-align: center;
     margin: 10px;
 }
 
-.contact-column a {
-    color: white;
+.contact-photo {
+    max-width: 300px; /* Adjust the size of the photo */
+    height: auto;
+    border-radius: 0; /* Remove the circular frame */
+    margin-bottom: 20px; /* Add space between the photo and company name */
 }
 
-.contact-column a:hover {
-    color: #DAA520;
+.company-name {
+    font-size: 1.1rem; /* Same font size as Pourquoi choisir Cintu */
+    margin-bottom: 15px; /* Add space between Cintu Transmission and the contact details */
+    color: #0A0A30; /* Set the same color */
+    font-weight: bold; /* Set the font-weight to bold */
+    line-height: 1.6; /* Adjust line height for better readability */
 }
+
+.contact-info a {
+    font-size: 1.1rem; /* Same font size as Pourquoi choisir Cintu */
+    color: #0A0A30; /* Set text color to match */
+    text-decoration: none;
+    line-height: 1.6; /* Adjust line height */
+}
+
+.contact-info a:hover {
+    color: #DAA520; /* Change color on hover */
+}
+
+.contact-info {
+    margin-bottom: 10px; /* Add space between each contact info */
+    font-size: 1.1rem; /* Same font size as Pourquoi choisir Cintu */
+    color: #0A0A30; /* Set text color to match */
+    line-height: 1.6; /* Adjust line height */
+}
+
+
 
 /* Adjust the spacing between section titles */
 .section h2 {
@@ -261,28 +298,6 @@ html, body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une légère ombre pour l'effet */
 }
 
-/* Contact section */
-.contact-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.contact-column {
-    flex: 1;
-    max-width: 40%; /* Réduit légèrement la largeur des colonnes pour plus d'espace */
-    text-align: center;
-    margin: 10px 40px; /* Ajoute plus de marge entre les colonnes */
-}
-
-.contact-column a {
-    color: white;
-}
-
-.contact-column a:hover {
-    color: #DAA520;
-}
 
 /* Hide the logo in the Contact section */
 #contact .section-logo {
