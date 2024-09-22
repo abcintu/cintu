@@ -223,7 +223,7 @@ html, body {
 }
 
 .contact-photo {
-    max-width: 300px; /* Adjust the size of the photo */
+    max-width: 100px; /* Adjust the size of the photo */
     height: auto;
     border-radius: 0; /* Remove the circular frame */
     margin-bottom: 20px; /* Add space between the photo and company name */
@@ -257,7 +257,7 @@ html, body {
 
 /* Styles pour rendre l'image responsive */
 .contact-photo {
-    max-width: 100%; /* L'image ne dépassera jamais 100% de la largeur du conteneur */
+    max-width: 300px; /* L'image ne dépassera jamais 100% de la largeur du conteneur */
     height: auto; /* Conserve les proportions de l'image */
     display: block; /* Évite les espaces blancs autour de l'image */
     margin: 0 auto; /* Centre l'image */
