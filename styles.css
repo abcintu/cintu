@@ -9,6 +9,14 @@ p {
     text-align: justify;
 }
 
+ul, ol {
+    text-align: justify;
+}
+
+ul li, ol li {
+    text-align: justify;
+}
+
 /* Apply 100% height to the html and body */
 html, body {
     height: 100%;
