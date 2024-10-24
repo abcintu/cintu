@@ -1,3 +1,4 @@
+
 // Ensure the DOM is fully loaded before adding event listeners
 document.addEventListener("DOMContentLoaded", function() {
     var navButton = document.getElementById("nav-button");
