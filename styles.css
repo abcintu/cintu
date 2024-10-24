@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+p {
+    text-align: justify;
+}
+
 /* Apply 100% height to the html and body */
 html, body {
     height: 100%;
