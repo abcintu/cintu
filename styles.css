@@ -26,8 +26,53 @@ html, body {
     scroll-behavior: smooth;
 }
 
+/* Header Styling */
+.nav-header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    max-height: 50px;
+    max-width: 100px; /* Set the logo's max width */
+    border-radius: 10px; /* Same border-radius as the menu button */
+    /* Add any other styling needed */
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu ul li {
+    display: inline-block;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.nav-menu ul li a:hover {
+    color: #DAA520;
+}
+
 /* Floating Navigation Button */
 #nav-button {
+    display: none; /* Initially hidden, only shown in mobile view */
     position: fixed;
     top: 20px;
     right: 20px;
@@ -38,42 +83,85 @@ html, body {
     cursor: pointer;
     z-index: 1000;
     border-radius: 10px;
-    color: #ccc;
+    color: #0A0A30;
+    max-width: 100px; 
 }
 
 #nav-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border-color: #fff;
-}
-
-/* Hidden Navigation Menu */
-#nav-menu {
-    display: none;
-    position: fixed;
-    right: 20px;
-    top: 60px;
     background-color: #0A0A30;
-    padding: 20px;
-    z-index: 1000;
-    border-radius: 10px;
+    color: #0A0A30;
+    border-color: #0A0A30;
 }
 
-#nav-menu ul {
-    list-style: none;
-}
 
-#nav-menu ul li {
-    margin-bottom: 10px;
-}
+/* Mobile view with a wider breakpoint (1024px) */
+@media only screen and (max-width: 1024px) {
+    /* Show the nav button */
+    #nav-button {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: transparent;
+        border: 2px solid #ccc;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1001; /* Ensure button stays above content */
+        border-radius: 10px;
+        color: #ccc;
+    }
 
-#nav-menu ul li a {
-    color: white;
-    text-decoration: none;
-}
+    #nav-button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-color: #fff;
+    }
 
-#nav-menu ul li a:hover {
-    color: #DAA520;
+    /* Hide the menu by default */
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0A0A30; /* Dark overlay background */
+        z-index: 1000; /* Ensure it stays on top */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* Show the menu when the 'active' class is added */
+    .nav-menu.active {
+        display: flex; /* Show the menu */
+    }
+
+    .nav-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu ul li {
+        margin-bottom: 20px; /* Space between menu items */
+    }
+
+    .nav-menu ul li a {
+        color: white;
+        font-size: 1.5rem; /* Make text larger */
+        text-decoration: none;
+        padding: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .nav-menu ul li a:hover {
+        color: #DAA520;
+    }
 }
 
 /* Floating Logo */
@@ -142,7 +230,6 @@ html, body {
     text-align: center;
 }
 
-
 /* About Section */
 .about-content, .why-choose-content, .what-expect-content {
     max-width: 800px;
@@ -167,13 +254,14 @@ html, body {
     margin-bottom: 20px; /* Pour ajouter plus d'espace sous le h2 */
 }
 
-
 /* Contact Section */
 .contact-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
     margin-top: 20px;
+    text-align: center;
 }
 
 .contact-column {
@@ -193,6 +281,10 @@ html, body {
     color: #0A0A30;
     font-weight: bold;
     line-height: 1.6;
+}
+
+.contact-info {
+    text-align: center;
 }
 
 .contact-info a {
@@ -233,4 +325,15 @@ footer {
     text-align: center;
     padding: 20px 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;
 }

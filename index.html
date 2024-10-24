@@ -26,23 +26,28 @@
 </head>
 
 <body>
- 
-    <!-- Floating Navigation Button -->
-    <button id="nav-button">☰</button>
-    <div id="nav-menu">
-        <ul>
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#about">Qui sommes-nous ?</a></li>
-            <li><a href="#what-expect">Notre approche</a></li>
-            <li><a href="#why-choose">Pourquoi choisir Cintu ?</a></li>
-            <li><a href="#contact">Contactez-nous</a></li>
-        </ul>
-    </div>
+
+    <!-- Navigation Bar -->
+    <header class="nav-header">
+        <div class="logo">
+            <img src="logo_cintu_color.png" alt="Cintu Transmission Logo">
+        </div>
+        <button id="nav-button" class="nav-toggle">☰</button>
+        <nav class="nav-menu" id="nav-menu"> <!-- Ensure the class and ID match -->
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">Qui sommes-nous ?</a></li>
+                <li><a href="#what-expect">Notre approche</a></li>
+                <li><a href="#why-choose">Pourquoi choisir Cintu ?</a></li>
+                <li><a href="#contact">Contactez-nous</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Landing Section (Home Page) -->
     <section id="home" class="logo-section">
         <div class="container">
-            <img src="logo_cintu_color.png" alt="Logo Cintu Transmission">
+            <img src="logo_cintu_color.png" alt="Logo Cintu Transmission" class="fixed-logo">
         </div>
     </section>
 
@@ -50,14 +55,12 @@
     <section id="about" class="section">
         <h2>Qui sommes-nous ?</h2>
         <div class="about-content">
-            <p>
             <ul>
                 <li>Cintu Transmission est avant tout le <strong>projet de vie de deux amis de longue date</strong> (20 ans+) aux <strong>profils hautement complémentaires</strong> qui se retrouvent sur une <strong>ambition entrepreneuriale commune : devenir dirigeants d'entreprise</strong>.</li>
                 <li>Amour et François souhaitent mettre à profit leur <strong>expérience en PME et en investissement</strong> afin d'<strong>acquérir une entreprise française</strong> pour l'accompagner dans son <strong>développement sur le long terme</strong>, tant d’un point de vue capitalistique qu’opérationnel.</li>
                 <li>Le duo de repreneurs <strong>propose de racheter une PME</strong> et d’en prendre la <strong>direction</strong> avec une <strong>phase d’accompagnement du cédant</strong>, pour assurer une <strong>transition sereine, pérenne et humaine</strong>.</li>
                 <li>Cintu Transmission est soutenu par un <strong>groupe d’investisseurs et entrepreneurs</strong> (institutionnels et individuels) représentant une <strong>source certaine et saine de financement en capitaux propres</strong>, permettant d’offrir une <strong>valorisation attractive pour le cédant</strong>. Ces partenaires, qui ont <strong>pleinement confiance</strong> dans le duo pour <strong>mener la reprise d'une PME</strong>, apporteront également une <strong>solide expertise pour l’accompagnement de la PME</strong> au quotidien.</li>
             </ul>
-        </p>
         </div>
     </section>
 
@@ -67,21 +70,19 @@
         <h2>Une approche différenciante,</h2>
         <h1>pour pérenniser une PME française.</h1>
         <div class="what-expect-content">
-            <p>Le projet de <strong>Cintu Transmission présente des avantages pour le cédant</strong> par rapport à des processus de vente classiques (concurrents ou des fonds d’investissement traditionnels), avec notamment&nbsp;:</p>
-            <p><ul>
+            <ul>
                 <li><strong>La protection des intérêts des employés</strong>, en privilégiant la croissance à la réduction des coûts.</li>
                 <li><strong>Le respect de l’héritage du cédant</strong>, en préservant la culture et les valeurs de la société, les repreneurs s’appuieront sur ces fondations pour bâtir le futur.</li>
                 <li><strong>La confiance et la clarté sur l’équipe dirigeante de reprise</strong>, qui deviendra actionnaire majoritaire et conservera une grande autonomie.</li>
                 <li><strong>Une transition saine</strong>, et non une révolution, avec l’aide d’une période de transition et d’accompagnement du cédant, essentielle au projet.</li>
                 <li><strong>L’engagement sur le long-terme</strong>, voire très long terme des repreneurs, qui n’ont pas d’horizon temporel de liquidité.</li>
                 <li><strong>Un projet de vie porté par deux amis aux valeurs fortes</strong> : humilité, positivité, résilience et discipline.</li>
-            </ul> 
-        </p>
+            </ul>
         </div>
     </section>
 
-    <!-- Ce que vous pouvez attendre Section -->
-    <section id="why-choose" class="section">
+     <!-- Ce que vous pouvez attendre Section -->
+     <section id="why-choose" class="section">
         <img src="logo_cintu_color.png" alt="Logo Cintu Transmission" class="section-logo">
         <h2>Pourquoi choisir Cintu ?</h2>
     
@@ -95,7 +96,7 @@
             </ul>
         </div>
     </section>
-
+    
     <!-- Contact Section -->
     <section id="contact" class="section">
         <h2>Contactez-nous</h2>
@@ -118,27 +119,19 @@
     <script src="script.js"></script>
 
     <script>
-        // Fonction pour afficher/masquer le logo en fonction du scroll
-        window.addEventListener('scroll', function() {
-            var logo = document.querySelector('.section-logo');
-            var aboutSection = document.getElementById('about');
-            var contactSection = document.getElementById('contact');
-            var navButton = document.getElementById('nav-button');
+     // Fonction pour masquer le logo tout le temps
+window.addEventListener('scroll', function() {
+    var logo = document.querySelector('.section-logo');
 
-            // Obtenir la position actuelle du scroll
-            var currentPosition = window.scrollY;
+    // Masquer le logo tout le temps
+    logo.style.display = 'none';
+});
 
-            // Obtenir la hauteur de la section "about" et "contact"
-            var aboutSectionTop = aboutSection.offsetTop;
-            var contactSectionTop = contactSection.offsetTop;
-
-            // Afficher le logo après avoir quitté la page d'accueil et avant la section "Contactez-nous"
-            if (currentPosition >= aboutSectionTop && currentPosition < contactSectionTop) {
-                logo.style.display = 'block';
-            } else {
-                logo.style.display = 'none';
-            }
-        });
+// Mobile navigation toggle
+document.getElementById('nav-button').addEventListener('click', function() {
+    var menu = document.querySelector('.nav-menu');
+    menu.classList.toggle('active');
+});
     </script>
 </body>
 </html>
