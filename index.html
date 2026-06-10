@@ -1,39 +1,280 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C21RK4TB04"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cintu Transmission, repreneurs de long terme</title>
+<meta name="description" content="Cintu Transmission reprend une PME française pour la diriger et la faire grandir sur le long terme, aux côtés de son cédant et de ses équipes.">
+<link rel="canonical" href="https://www.cintu.fr/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cintu Transmission, repreneurs de long terme">
+<meta property="og:description" content="Nous reprenons une PME française pour la diriger et la faire grandir, sans horizon de revente, aux côtés de son cédant et de ses équipes.">
+<meta property="og:url" content="https://www.cintu.fr/">
+<meta property="og:image" content="https://www.cintu.fr/logo_cintu_color.png">
+<meta property="og:locale" content="fr_FR">
 
-      gtag('config', 'G-C21RK4TB04');
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cintu - Repreneurs de long terme</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C21RK4TB04"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C21RK4TB04');
+</script>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="description" content="Cintu Transmission - Repreneurs de long terme">
-    <meta name="author" content="Cintu Transmission" />
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/logo_cintu_color.png" />
-    <meta property="og:title" content="Cintu - Repreneurs de long terme">
-  <meta name="twitter:title" content="Cintu - Repreneurs de long terme">
-  <meta property="og:description" content="Cintu Transmission - Repreneurs de long terme">
-  <meta name="twitter:description" content="Cintu Transmission - Repreneurs de long terme">
-  <meta name="twitter:card" content="summary_large_image">
-  <script type="module" crossorigin src="/assets/index-DG8CJ79O.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Cy9kyRRh.css">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="msapplication-TileColor" content="#0A0A30">
+<meta name="theme-color" content="#07071f">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07071f;
+  --bg-2:#0A0A30;
+  --bg-3:#10103d;
+  --txt:#EDECE4;
+  --txt-dim:rgba(237,236,228,.55);
+  --txt-faint:rgba(237,236,228,.34);
+  --gold:#7C97C9;
+  --line:rgba(237,236,228,.12);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Inter',-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:var(--bg)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12}
+.wrap{max-width:1280px;margin:0 auto;padding:0 5vw}
+.eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:400;display:block;margin-bottom:1.8rem}
+
+/* ── Progress + nav ── */
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);width:0;z-index:200}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.6rem 5vw;mix-blend-mode:normal;transition:background .4s,padding .4s}
+.nav.scrolled{background:rgba(7,7,31,.88);backdrop-filter:blur(14px);padding:1rem 5vw;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
+.brand svg{width:32px;height:22px}
+.brand span{font-family:var(--serif);font-size:1.2rem;letter-spacing:.08em;color:var(--txt)}
+.nav ol{display:flex;gap:2.8rem;list-style:none;counter-reset:n}
+.nav ol a{counter-increment:n;color:var(--txt-dim);text-decoration:none;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;transition:color .3s}
+.nav ol a::before{content:counter(n,decimal-leading-zero)" ";color:var(--gold);font-size:.66rem;vertical-align:.18em;margin-right:.3rem}
+.nav ol a:hover{color:var(--txt)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--txt);font-size:1.1rem;padding:.35rem .65rem;cursor:pointer}
+
+/* ── Hero ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;background:var(--bg)}
+.hero .wrap{width:100%}
+.hero-mark{width:84px;margin-bottom:3rem;opacity:0;animation:up 1.4s .2s cubic-bezier(.22,1,.36,1) forwards}
+.hero h1{font-size:clamp(3rem,8.5vw,7.5rem);font-weight:300;letter-spacing:-.01em;max-width:14ch;opacity:0;animation:up 1.6s .55s cubic-bezier(.22,1,.36,1) forwards}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{margin-top:2.4rem;max-width:520px;color:var(--txt-dim);font-size:1.05rem;opacity:0;animation:up 1.6s 1s cubic-bezier(.22,1,.36,1) forwards}
+.hero-foot{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 5vw;border-top:1px solid var(--line);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--txt-faint);opacity:0;animation:up 1.4s 1.5s forwards}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+
+/* ── Manifesto ── */
+.manifesto{padding:11rem 0;border-top:1px solid var(--line)}
+.manifesto p{font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.8rem);font-weight:300;line-height:1.45;max-width:1000px;color:var(--txt-dim)}
+.manifesto p strong{font-weight:400;color:var(--txt)}
+.manifesto p em{font-style:italic;color:var(--gold)}
+
+/* ── Duo ── */
+.duo{padding:9rem 0;border-top:1px solid var(--line)}
+.duo-head{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem}
+.duo-head h2{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:300}
+.duo-head h2 em{font-style:italic;color:var(--gold)}
+.duo-head p{color:var(--txt-dim);max-width:480px;justify-self:end}
+.duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.profil{border:1px solid var(--line);background:var(--bg-2)}
+.profil figure{margin:0;aspect-ratio:4/5;overflow:hidden}
+.profil img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.04);transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.profil:hover img{transform:scale(1.03)}
+.profil-meta{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.8rem 2rem;border-top:1px solid var(--line)}
+.profil-meta h3{font-size:1.7rem;font-weight:400}
+.profil-meta small{display:block;font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:.5rem}
+.profil-meta a{color:var(--txt-dim);text-decoration:none;font-size:.8rem;letter-spacing:.1em;border:1px solid var(--line);padding:.6rem 1.1rem;transition:all .3s;flex:none}
+.profil-meta a:hover{color:var(--bg);background:var(--gold);border-color:var(--gold)}
+
+/* ── Engagements ── */
+.engagements{padding:9rem 0;border-top:1px solid var(--line)}
+.engagements h2{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:300;max-width:800px;margin-bottom:6rem}
+.engagements h2 em{font-style:italic;color:var(--gold)}
+.eng-row{display:grid;grid-template-columns:140px 1fr 1.3fr;gap:3rem;padding:3rem 0;border-top:1px solid var(--line);align-items:baseline;transition:background .4s;position:relative}
+.eng-row:last-child{border-bottom:1px solid var(--line)}
+.eng-row:hover{background:rgba(237,236,228,.025)}
+.eng-row b{font-family:var(--serif);font-weight:300;font-size:2.2rem;color:var(--gold)}
+.eng-row h3{font-size:1.65rem;font-weight:400}
+.eng-row p{color:var(--txt-dim);font-size:.97rem}
+
+/* ── Pourquoi ── */
+.pourquoi{padding:9rem 0;border-top:1px solid var(--line);background:var(--bg-2)}
+.pq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:6rem}
+.pq-grid h2{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:300;position:sticky;top:7rem}
+.pq-grid h2 em{font-style:italic;color:var(--gold)}
+.pq-item{padding:2.2rem 0;border-top:1px solid var(--line)}
+.pq-item:last-child{border-bottom:1px solid var(--line)}
+.pq-item h3{font-size:1.4rem;font-weight:400;margin-bottom:.7rem;display:flex;align-items:center;gap:1rem}
+.pq-item h3::before{content:"";width:22px;height:1px;background:var(--gold);flex:none}
+.pq-item p{color:var(--txt-dim);font-size:.95rem;padding-left:calc(22px + 1rem)}
+
+/* ── Contact ── */
+.contact{padding:11rem 0 9rem;border-top:1px solid var(--line);text-align:center}
+.contact .eyebrow{margin-bottom:2.4rem}
+.contact h2{font-size:clamp(2.6rem,6vw,5.4rem);font-weight:300;max-width:18ch;margin:0 auto 3.2rem}
+.contact h2 em{font-style:italic;color:var(--gold)}
+.contact a.mail{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,2rem);color:var(--txt);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:.35rem;transition:color .3s}
+.contact a.mail:hover{color:var(--gold)}
+.contact-links{margin-top:4rem;display:flex;justify-content:center;gap:3rem;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase}
+.contact-links a{color:var(--txt-dim);text-decoration:none;transition:color .3s}
+.contact-links a:hover{color:var(--gold)}
+
+footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-content:space-between;gap:2rem;font-size:.72rem;color:var(--txt-faint);letter-spacing:.05em;flex-wrap:wrap}
+
+.gold-path{fill:var(--gold)}
+
+@media(max-width:920px){
+  .nav ol{display:none}
+  .nav.open ol{display:flex;position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;align-items:center;gap:2.2rem}
+  .nav.open ol a{font-size:1rem}
+  .burger{display:block;position:relative;z-index:101}
+  .duo-head,.duo-grid,.pq-grid{grid-template-columns:1fr;gap:3rem}
+  .duo-head p{justify-self:start}
+  .pq-grid h2{position:static}
+  .eng-row{grid-template-columns:1fr;gap:.7rem;padding:2.2rem 0}
+  .manifesto,.duo,.engagements,.pourquoi,.contact{padding:5.5rem 0}
+  .hero-foot{font-size:.58rem;letter-spacing:.18em}
+}
+</style>
 </head>
+<body>
 
-  <body>
-    <div id="root"></div>
-  </body>
+<div class="progress" id="progress"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Cintu Transmission">
+    <svg viewBox="0 0 100 64" fill="none" aria-hidden="true"><path d="M50 4 96 60 78 60 50 24 22 60 4 60Z" fill="#EDECE4"/><path class="gold-path" d="M62 38 96 60 40 60Z"/></svg>
+    <span>CINTU</span>
+  </a>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <ol>
+    <li><a href="#manifesto">Le projet</a></li>
+    <li><a href="#duo">Le duo</a></li>
+    <li><a href="#engagements">Engagements</a></li>
+    <li><a href="#pourquoi">Pourquoi Cintu</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <svg class="hero-mark" viewBox="0 0 100 64" fill="none" aria-hidden="true"><path d="M50 4 96 60 78 60 50 24 22 60 4 60Z" fill="#EDECE4"/><path class="gold-path" d="M62 38 96 60 40 60Z"/></svg>
+    <h1>Repreneurs de <em>long terme</em>.</h1>
+    <p>Nous reprenons une PME française pour la diriger et la faire grandir, sans horizon de revente, aux côtés de son cédant et de ses équipes.</p>
+  </div>
+  <div class="hero-foot">
+    <span>Cintu Transmission</span>
+    <span>France</span>
+  </div>
+</section>
+
+<section class="manifesto" id="manifesto">
+  <div class="wrap">
+    <span class="eyebrow">Le projet</span>
+    <p>Cintu Transmission est le <strong>projet de vie de deux amis de plus de vingt ans</strong>, aux profils hautement complémentaires. Forts d'une expérience en PME et en investissement, nous proposons de <strong>racheter une entreprise française et d'en prendre la direction</strong>, avec une phase d'accompagnement du cédant, pour une transition <em>sereine, pérenne et humaine</em>. Nous sommes soutenus par un groupe d'investisseurs et d'entrepreneurs de premier plan, source certaine et saine de financement en capitaux propres.</p>
+  </div>
+</section>
+
+<section class="duo" id="duo">
+  <div class="wrap">
+    <div class="duo-head">
+      <div>
+        <span class="eyebrow">Le duo</span>
+        <h2>Deux profils, <em>une direction</em>.</h2>
+      </div>
+      <p>Vingt ans d'amitié, des parcours complémentaires en opérations et en investissement, et une ambition commune&nbsp;: diriger une PME française et l'inscrire dans la durée.</p>
+    </div>
+    <div class="duo-grid">
+      <article class="profil">
+        <figure><img src="photo_AB.png" alt="Amour Buidine" style="object-position:60% 25%"></figure>
+        <div class="profil-meta">
+          <div><h3>Amour Buidine</h3><small>Co-fondateur</small></div>
+          <a href="https://www.linkedin.com/in/amourbuidine" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </article>
+      <article class="profil">
+        <figure><img src="photo_FF.png" alt="François Frigara" style="object-position:50% 20%"></figure>
+        <div class="profil-meta">
+          <div><h3>François Frigara</h3><small>Co-fondateur</small></div>
+          <a href="https://www.linkedin.com/in/francois-frigara" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="engagements" id="engagements">
+  <div class="wrap">
+    <span class="eyebrow">Notre approche</span>
+    <h2>Six engagements pour <em>pérenniser</em> une PME française.</h2>
+    <div>
+      <div class="eng-row"><b>01</b><h3>Protéger les équipes</h3><p>Les intérêts des employés d'abord&nbsp;: nous privilégions la croissance à la réduction des coûts.</p></div>
+      <div class="eng-row"><b>02</b><h3>Respecter l'héritage</h3><p>La culture et les valeurs de la société sont préservées. Ces fondations portent le futur de l'entreprise.</p></div>
+      <div class="eng-row"><b>03</b><h3>Une équipe dirigeante claire</h3><p>Les repreneurs deviennent actionnaires majoritaires et conservent une grande autonomie. Aucune zone d'ombre.</p></div>
+      <div class="eng-row"><b>04</b><h3>Une transition saine</h3><p>Une évolution, pas une révolution, avec une période d'accompagnement du cédant, essentielle au projet.</p></div>
+      <div class="eng-row"><b>05</b><h3>Le long terme, vraiment</h3><p>Aucun horizon de liquidité. Notre engagement se compte en décennies, pas en cycles de fonds.</p></div>
+      <div class="eng-row"><b>06</b><h3>Des valeurs fortes</h3><p>Un projet de vie porté par deux amis&nbsp;: humilité, positivité, résilience et discipline.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pourquoi" id="pourquoi">
+  <div class="wrap">
+    <div class="pq-grid">
+      <div>
+        <span class="eyebrow">Pourquoi Cintu</span>
+        <h2>Ce que nous apportons <em>au cédant</em>.</h2>
+      </div>
+      <div>
+        <div class="pq-item"><h3>Une approche humaine</h3><p>Une reprise fondée sur la relation et un fort alignement des intérêts entre cédant, repreneurs et équipes.</p></div>
+        <div class="pq-item"><h3>Clarté et confiance</h3><p>Le cédant bâtit sa relation directement avec la future équipe dirigeante, sans intermédiaire, sans surprise.</p></div>
+        <div class="pq-item"><h3>Expérience opérationnelle</h3><p>Un duo aux profils ultra-complémentaires, avec une expérience forte en PME comme en investissement.</p></div>
+        <div class="pq-item"><h3>Savoir-faire transactionnel</h3><p>Un processus maîtrisé qui minimise les risques d'échec et la perte de temps pour toutes les parties.</p></div>
+        <div class="pq-item"><h3>Un financement solide</h3><p>Un groupe d'apporteurs de fonds propres de premier plan, permettant d'offrir une valorisation attractive au cédant.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2>Parlons de votre <em>transmission</em>.</h2>
+    <a class="mail" href="mailto:transmission@cintu.fr">transmission@cintu.fr</a>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/amourbuidine" target="_blank" rel="noopener">Amour Buidine</a>
+      <a href="https://www.linkedin.com/in/francois-frigara" target="_blank" rel="noopener">François Frigara</a>
+      <a href="https://www.linkedin.com/company/cintu-transmission" target="_blank" rel="noopener">Cintu Transmission</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Cintu Transmission. Tous droits réservés.</span>
+  <span>9, rue des Colonnes 75002 Paris. SAS au capital de 660.002 €, RCS Paris n°930 603 998.</span>
+</footer>
+
+<script>
+const nav=document.getElementById('nav'),bar=document.getElementById('progress');
+addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',scrollY>40);
+  const h=document.documentElement;
+  bar.style.width=(scrollY/(h.scrollHeight-h.clientHeight)*100)+'%';
+});
+document.getElementById('burger').addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('ol a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+</script>
+</body>
 </html>
