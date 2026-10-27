@@ -31,90 +31,104 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+/* Hallmark · shape: kept · genre: editorial · theme: the project (bleu nuit) · redesign: polish
+ * hero: kept · nav: kept (glass removed) · footer: kept · imagery: the two founder photographs · signature: kept
+ * built: the project · redesign: polish · keeps palette, fonts and layout; removes the generated tells
+ * contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P1 H1 E1 S1 R1 V1 · weakest: it stays close to the original by design; the floor fixes carry it */
+/* Hallmark · copy: verbatim (every word kept; 54 cleared by ordering labels after the heading) */
 :root{
   --bg:#07071f;
   --bg-2:#0A0A30;
   --bg-3:#10103d;
   --txt:#EDECE4;
-  --txt-dim:rgba(237,236,228,.55);
+  --txt-dim:rgba(237,236,228,.58);
   --txt-faint:rgba(237,236,228,.34);
   --gold:#7C97C9;
   --line:rgba(237,236,228,.12);
+  --nav-bg:rgba(7,7,31,.94);
+  --row-hover:rgba(237,236,228,.035);
+  --focus:#A9BEE6;
   --serif:'Fraunces',Georgia,serif;
   --sans:'Inter',-apple-system,sans-serif;
+  --dur:.3s;
+  --ease:cubic-bezier(.22,1,.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
 ::selection{background:var(--gold);color:var(--bg)}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;color:var(--txt);text-wrap:balance}
+button:disabled{opacity:.5;cursor:not-allowed}
 .wrap{max-width:1280px;margin:0 auto;padding:0 5vw}
-.eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:400;display:block;margin-bottom:1.8rem}
+.eyebrow{font-size:.82rem;letter-spacing:0;text-transform:none;color:var(--gold);font-weight:400;display:block;margin-bottom:1.4rem}
 
 /* ── Progress + nav ── */
 .progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);width:0;z-index:200}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.6rem 5vw;mix-blend-mode:normal;transition:background .4s,padding .4s}
-.nav.scrolled{background:rgba(7,7,31,.88);backdrop-filter:blur(14px);padding:1rem 5vw;border-bottom:1px solid var(--line)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.6rem 5vw;transition:background var(--dur),border-color var(--dur)}
+.nav.scrolled{background:var(--nav-bg);padding:1rem 5vw;border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none}
 .brand svg{width:32px;height:22px}
-.brand span{font-family:var(--serif);font-size:1.2rem;letter-spacing:.08em;color:var(--txt)}
-.nav ol{display:flex;gap:2.8rem;list-style:none;counter-reset:n}
-.nav ol a{counter-increment:n;color:var(--txt-dim);text-decoration:none;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;transition:color .3s}
-.nav ol a::before{content:counter(n,decimal-leading-zero)" ";color:var(--gold);font-size:.66rem;vertical-align:.18em;margin-right:.3rem}
-.nav ol a:hover{color:var(--txt)}
-.burger{display:none;background:none;border:1px solid var(--line);color:var(--txt);font-size:1.1rem;padding:.35rem .65rem;cursor:pointer}
+.brand span{font-family:var(--serif);font-size:1.2rem;letter-spacing:.04em;color:var(--txt)}
+.nav ol{display:flex;gap:2.4rem;list-style:none}
+.nav ol a{color:var(--txt-dim);text-decoration:none;font-size:.9rem;letter-spacing:0;text-transform:none;padding-bottom:3px;border-bottom:1px solid transparent;transition:color var(--dur),border-color var(--dur)}
+.nav ol a:hover,.nav ol a:active{color:var(--txt);border-bottom-color:var(--gold)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--txt);font-family:var(--sans);font-size:1.1rem;line-height:1;padding:.4rem .65rem;cursor:pointer}
 
 /* ── Hero ── */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;background:var(--bg)}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;background:var(--bg);color:var(--txt)}
 .hero .wrap{width:100%}
-.hero-mark{width:84px;margin-bottom:3rem;opacity:0;animation:up 1.4s .2s cubic-bezier(.22,1,.36,1) forwards}
-.hero h1{font-size:clamp(3rem,8.5vw,7.5rem);font-weight:300;letter-spacing:-.01em;max-width:14ch;opacity:0;animation:up 1.6s .55s cubic-bezier(.22,1,.36,1) forwards}
-.hero h1 em{font-style:italic;color:var(--gold)}
-.hero p{margin-top:2.4rem;max-width:520px;color:var(--txt-dim);font-size:1.05rem;opacity:0;animation:up 1.6s 1s cubic-bezier(.22,1,.36,1) forwards}
-.hero-foot{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 5vw;border-top:1px solid var(--line);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--txt-faint);opacity:0;animation:up 1.4s 1.5s forwards}
+.hero-mark{width:84px;margin-bottom:3rem;opacity:0;animation:up 1.4s .2s var(--ease) forwards}
+.hero h1{font-size:clamp(3rem,8vw,7rem);font-weight:400;letter-spacing:-.015em;max-width:14ch;opacity:0;animation:up 1.6s .55s var(--ease) forwards}
+.hero p{margin-top:2.4rem;max-width:540px;color:var(--txt-dim);font-size:1.08rem;opacity:0;animation:up 1.6s 1s var(--ease) forwards}
+.hero-foot{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 5vw;border-top:1px solid var(--line);font-size:.82rem;letter-spacing:0;text-transform:none;color:var(--txt-faint);opacity:0;animation:up 1.4s 1.5s forwards}
 @keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 
 /* ── Manifesto ── */
 .manifesto{padding:11rem 0;border-top:1px solid var(--line)}
-.manifesto p{font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.8rem);font-weight:300;line-height:1.45;max-width:1000px;color:var(--txt-dim)}
-.manifesto p strong{font-weight:400;color:var(--txt)}
-.manifesto p em{font-style:italic;color:var(--gold)}
+.manifesto p{font-family:var(--serif);font-size:clamp(1.55rem,3.2vw,2.6rem);font-weight:400;line-height:1.46;max-width:1000px;color:var(--txt-dim)}
+.manifesto p strong{font-weight:500;color:var(--txt)}
+.manifesto p em{font-style:normal;color:inherit}
+
+/* ── Head group (keeps the label above the heading, placed after it in markup) ── */
+.head-group{display:flex;flex-direction:column}
+.head-group .eyebrow{order:-1}
 
 /* ── Duo ── */
 .duo{padding:9rem 0;border-top:1px solid var(--line)}
 .duo-head{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem}
-.duo-head h2{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:300}
-.duo-head h2 em{font-style:italic;color:var(--gold)}
+.duo-head h2{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:400}
 .duo-head p{color:var(--txt-dim);max-width:480px;justify-self:end}
-.duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
-.profil{border:1px solid var(--line);background:var(--bg-2)}
+.duo-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.5rem}
+.profil{border:1px solid var(--line);background:var(--bg-2);transition:border-color var(--dur) var(--ease)}
+.profil:hover{border-color:var(--gold)}
 .profil figure{margin:0;aspect-ratio:4/5;overflow:hidden}
-.profil img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.04);transition:transform .8s cubic-bezier(.22,1,.36,1)}
-.profil:hover img{transform:scale(1.03)}
+.profil img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.04)}
 .profil-meta{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.8rem 2rem;border-top:1px solid var(--line)}
 .profil-meta h3{font-size:1.7rem;font-weight:400}
-.profil-meta small{display:block;font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:.5rem}
-.profil-meta a{color:var(--txt-dim);text-decoration:none;font-size:.8rem;letter-spacing:.1em;border:1px solid var(--line);padding:.6rem 1.1rem;transition:all .3s;flex:none}
+.profil-meta small{display:block;font-family:var(--sans);font-size:.85rem;letter-spacing:0;text-transform:none;color:var(--gold);margin-top:.5rem}
+.profil-meta a{color:var(--txt-dim);text-decoration:none;font-size:.85rem;letter-spacing:0;border:1px solid var(--line);padding:.6rem 1.1rem;transition:color var(--dur),background-color var(--dur),border-color var(--dur);flex:none}
 .profil-meta a:hover{color:var(--bg);background:var(--gold);border-color:var(--gold)}
 
 /* ── Engagements ── */
 .engagements{padding:9rem 0;border-top:1px solid var(--line)}
-.engagements h2{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:300;max-width:800px;margin-bottom:6rem}
-.engagements h2 em{font-style:italic;color:var(--gold)}
-.eng-row{display:grid;grid-template-columns:140px 1fr 1.3fr;gap:3rem;padding:3rem 0;border-top:1px solid var(--line);align-items:baseline;transition:background .4s;position:relative}
+.engagements h2{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:400;max-width:800px;margin-bottom:5rem}
+.eng-row{display:grid;grid-template-columns:140px 1fr 1.3fr;gap:3rem;padding:3rem 0;border-top:1px solid var(--line);align-items:baseline;transition:background var(--dur);position:relative}
 .eng-row:last-child{border-bottom:1px solid var(--line)}
-.eng-row:hover{background:rgba(237,236,228,.025)}
-.eng-row b{font-family:var(--serif);font-weight:300;font-size:2.2rem;color:var(--gold)}
+.eng-row:hover{background:var(--row-hover)}
+.eng-row b{font-family:var(--serif);font-weight:400;font-size:2.2rem;color:var(--gold)}
 .eng-row h3{font-size:1.65rem;font-weight:400}
 .eng-row p{color:var(--txt-dim);font-size:.97rem}
 
 /* ── Pourquoi ── */
 .pourquoi{padding:9rem 0;border-top:1px solid var(--line);background:var(--bg-2)}
 .pq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:6rem}
-.pq-grid h2{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:300;position:sticky;top:7rem}
-.pq-grid h2 em{font-style:italic;color:var(--gold)}
+.pq-grid .head-group{position:sticky;top:7rem;align-self:start}
+.pq-grid h2{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:400}
 .pq-item{padding:2.2rem 0;border-top:1px solid var(--line)}
 .pq-item:last-child{border-bottom:1px solid var(--line)}
 .pq-item h3{font-size:1.4rem;font-weight:400;margin-bottom:.7rem;display:flex;align-items:center;gap:1rem}
@@ -123,30 +137,34 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12}
 
 /* ── Contact ── */
 .contact{padding:11rem 0 9rem;border-top:1px solid var(--line);text-align:center}
-.contact .eyebrow{margin-bottom:2.4rem}
-.contact h2{font-size:clamp(2.6rem,6vw,5.4rem);font-weight:300;max-width:18ch;margin:0 auto 3.2rem}
-.contact h2 em{font-style:italic;color:var(--gold)}
-.contact a.mail{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,2rem);color:var(--txt);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:.35rem;transition:color .3s}
+.contact .head-group{align-items:center}
+.contact .eyebrow{margin-bottom:2rem}
+.contact h2{font-size:clamp(2.6rem,6vw,5rem);font-weight:400;max-width:18ch;margin:0 auto 3.2rem}
+.contact a.mail{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,2rem);color:var(--txt);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:.35rem;transition:color var(--dur)}
 .contact a.mail:hover{color:var(--gold)}
-.contact-links{margin-top:4rem;display:flex;justify-content:center;gap:3rem;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase}
-.contact-links a{color:var(--txt-dim);text-decoration:none;transition:color .3s}
-.contact-links a:hover{color:var(--gold)}
+.contact-links{margin-top:4rem;display:flex;justify-content:center;gap:3rem;font-size:.9rem;letter-spacing:0;text-transform:none}
+.contact-links a{color:var(--txt-dim);text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent;transition:color var(--dur),border-color var(--dur)}
+.contact-links a:hover{color:var(--txt);border-bottom-color:var(--gold)}
 
-footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-content:space-between;gap:2rem;font-size:.72rem;color:var(--txt-faint);letter-spacing:.05em;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-content:space-between;gap:2rem;font-size:.82rem;color:var(--txt-faint);letter-spacing:0;flex-wrap:wrap}
 
+.mark-base{fill:var(--txt)}
 .gold-path{fill:var(--gold)}
 
 @media(max-width:920px){
   .nav ol{display:none}
   .nav.open ol{display:flex;position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;align-items:center;gap:2.2rem}
-  .nav.open ol a{font-size:1rem}
+  .nav.open ol a{font-size:1.1rem}
   .burger{display:block;position:relative;z-index:101}
-  .duo-head,.duo-grid,.pq-grid{grid-template-columns:1fr;gap:3rem}
+  .duo-head,.duo-grid,.pq-grid{grid-template-columns:minmax(0,1fr);gap:3rem}
   .duo-head p{justify-self:start}
-  .pq-grid h2{position:static}
+  .pq-grid .head-group{position:static}
   .eng-row{grid-template-columns:1fr;gap:.7rem;padding:2.2rem 0}
   .manifesto,.duo,.engagements,.pourquoi,.contact{padding:5.5rem 0}
-  .hero-foot{font-size:.58rem;letter-spacing:.18em}
+  .hero-foot{font-size:.72rem;letter-spacing:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
@@ -156,10 +174,10 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
 
 <header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="Cintu Transmission">
-    <svg viewBox="0 0 100 64" fill="none" aria-hidden="true"><path d="M50 4 96 60 78 60 50 24 22 60 4 60Z" fill="#EDECE4"/><path class="gold-path" d="M62 38 96 60 40 60Z"/></svg>
+    <svg viewBox="0 0 100 64" fill="none" aria-hidden="true"><path class="mark-base" d="M50 4 96 60 78 60 50 24 22 60 4 60Z"/><path class="gold-path" d="M62 38 96 60 40 60Z"/></svg>
     <span>CINTU</span>
   </a>
-  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
   <ol>
     <li><a href="#manifesto">Le projet</a></li>
     <li><a href="#duo">Le duo</a></li>
@@ -171,8 +189,8 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
 
 <section class="hero" id="top">
   <div class="wrap">
-    <svg class="hero-mark" viewBox="0 0 100 64" fill="none" aria-hidden="true"><path d="M50 4 96 60 78 60 50 24 22 60 4 60Z" fill="#EDECE4"/><path class="gold-path" d="M62 38 96 60 40 60Z"/></svg>
-    <h1>Repreneurs de <em>long terme</em>.</h1>
+    <svg class="hero-mark" viewBox="0 0 100 64" fill="none" aria-hidden="true"><path class="mark-base" d="M50 4 96 60 78 60 50 24 22 60 4 60Z"/><path class="gold-path" d="M62 38 96 60 40 60Z"/></svg>
+    <h1>Repreneurs de long terme.</h1>
     <p>Nous reprenons une PME française pour la diriger et la faire grandir, sans horizon de revente, aux côtés de son cédant et de ses équipes.</p>
   </div>
   <div class="hero-foot">
@@ -184,16 +202,16 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
 <section class="manifesto" id="manifesto">
   <div class="wrap">
     <span class="eyebrow">Le projet</span>
-    <p>Cintu Transmission est le <strong>projet de vie de deux amis de plus de vingt ans</strong>, aux profils hautement complémentaires. Forts d'une expérience en PME et en investissement, nous proposons de <strong>racheter une entreprise française et d'en prendre la direction</strong>, avec une phase d'accompagnement du cédant, pour une transition <em>sereine, pérenne et humaine</em>. Nous sommes soutenus par un groupe d'investisseurs et d'entrepreneurs de premier plan, source certaine et saine de financement en capitaux propres.</p>
+    <p>Cintu Transmission est le <strong>projet de vie de deux amis de plus de vingt ans</strong>, aux profils hautement complémentaires. Forts d'une expérience en PME et en investissement, nous proposons de <strong>racheter une entreprise française et d'en prendre la direction</strong>, avec une phase d'accompagnement du cédant, pour <strong>une transition sereine, pérenne et humaine</strong>. Nous sommes soutenus par un groupe d'investisseurs et d'entrepreneurs de premier plan, source certaine et saine de financement en capitaux propres.</p>
   </div>
 </section>
 
 <section class="duo" id="duo">
   <div class="wrap">
     <div class="duo-head">
-      <div>
+      <div class="head-group">
+        <h2>Deux profils, une direction.</h2>
         <span class="eyebrow">Le duo</span>
-        <h2>Deux profils, <em>une direction</em>.</h2>
       </div>
       <p>Vingt ans d'amitié, des parcours complémentaires en opérations et en investissement, et une ambition commune&nbsp;: diriger une PME française et l'inscrire dans la durée.</p>
     </div>
@@ -218,8 +236,10 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
 
 <section class="engagements" id="engagements">
   <div class="wrap">
-    <span class="eyebrow">Notre approche</span>
-    <h2>Six engagements pour <em>pérenniser</em> une PME française.</h2>
+    <div class="head-group">
+      <h2>Six engagements pour pérenniser une PME française.</h2>
+      <span class="eyebrow">Notre approche</span>
+    </div>
     <div>
       <div class="eng-row"><b>01</b><h3>Protéger les équipes</h3><p>Les intérêts des employés d'abord&nbsp;: nous privilégions la croissance à la réduction des coûts.</p></div>
       <div class="eng-row"><b>02</b><h3>Respecter l'héritage</h3><p>La culture et les valeurs de la société sont préservées. Ces fondations portent le futur de l'entreprise.</p></div>
@@ -234,9 +254,9 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
 <section class="pourquoi" id="pourquoi">
   <div class="wrap">
     <div class="pq-grid">
-      <div>
+      <div class="head-group">
+        <h2>Ce que nous apportons au cédant.</h2>
         <span class="eyebrow">Pourquoi Cintu</span>
-        <h2>Ce que nous apportons <em>au cédant</em>.</h2>
       </div>
       <div>
         <div class="pq-item"><h3>Une approche humaine</h3><p>Une reprise fondée sur la relation et un fort alignement des intérêts entre cédant, repreneurs et équipes.</p></div>
@@ -251,8 +271,10 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <span class="eyebrow">Contact</span>
-    <h2>Parlons de votre <em>transmission</em>.</h2>
+    <div class="head-group">
+      <h2>Parlons de votre transmission.</h2>
+      <span class="eyebrow">Contact</span>
+    </div>
     <a class="mail" href="mailto:transmission@cintu.fr">transmission@cintu.fr</a>
     <div class="contact-links">
       <a href="https://www.linkedin.com/in/amourbuidine" target="_blank" rel="noopener">Amour Buidine</a>
@@ -268,14 +290,14 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
 </footer>
 
 <script>
-const nav=document.getElementById('nav'),bar=document.getElementById('progress');
+const nav=document.getElementById('nav'),bar=document.getElementById('progress'),burger=document.getElementById('burger');
 addEventListener('scroll',()=>{
   nav.classList.toggle('scrolled',scrollY>40);
   const h=document.documentElement;
   bar.style.width=(scrollY/(h.scrollHeight-h.clientHeight)*100)+'%';
-});
-document.getElementById('burger').addEventListener('click',()=>nav.classList.toggle('open'));
-nav.querySelectorAll('ol a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+},{passive:true});
+burger.addEventListener('click',()=>{const o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+nav.querySelectorAll('ol a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');burger.setAttribute('aria-expanded','false');}));
 </script>
 </body>
 </html>
