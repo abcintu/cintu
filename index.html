@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://www.cintu.fr/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Cintu Transmission, repreneurs de long terme">
-<meta property="og:description" content="Nous reprenons une PME française pour la diriger et la faire grandir, sans horizon de revente, aux côtés de son cédant et de ses équipes.">
+<meta property="og:description" content="Cintu Transmission reprend une PME française pour la diriger et la faire grandir sur le long terme, aux côtés de son cédant et de ses équipes.">
 <meta property="og:url" content="https://www.cintu.fr/">
 <meta property="og:image" content="https://www.cintu.fr/logo_cintu_color.png">
 <meta property="og:locale" content="fr_FR">
@@ -88,21 +88,13 @@ button:disabled{opacity:.5;cursor:not-allowed}
 .hero-foot{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 5vw;border-top:1px solid var(--line);font-size:.82rem;letter-spacing:0;text-transform:none;color:var(--txt-faint);opacity:0;animation:up 1.4s 1.5s forwards}
 @keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 
-/* ── Manifesto ── */
-.manifesto{padding:11rem 0;border-top:1px solid var(--line)}
-.manifesto p{font-family:var(--serif);font-size:clamp(1.55rem,3.2vw,2.6rem);font-weight:400;line-height:1.46;max-width:1000px;color:var(--txt-dim)}
-.manifesto p strong{font-weight:500;color:var(--txt)}
-.manifesto p em{font-style:normal;color:inherit}
-
 /* ── Head group (keeps the label above the heading, placed after it in markup) ── */
 .head-group{display:flex;flex-direction:column}
 .head-group .eyebrow{order:-1}
 
 /* ── Duo ── */
 .duo{padding:9rem 0;border-top:1px solid var(--line)}
-.duo-head{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem}
-.duo-head h2{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:400}
-.duo-head p{color:var(--txt-dim);max-width:480px;justify-self:end}
+.duo .eyebrow{margin-bottom:2.8rem}
 .duo-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.5rem}
 .profil{border:1px solid var(--line);background:var(--bg-2);transition:border-color var(--dur) var(--ease)}
 .profil:hover{border-color:var(--gold)}
@@ -156,11 +148,10 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
   .nav.open ol{display:flex;position:fixed;inset:0;background:var(--bg);flex-direction:column;justify-content:center;align-items:center;gap:2.2rem}
   .nav.open ol a{font-size:1.1rem}
   .burger{display:block;position:relative;z-index:101}
-  .duo-head,.duo-grid,.pq-grid{grid-template-columns:minmax(0,1fr);gap:3rem}
-  .duo-head p{justify-self:start}
+  .duo-grid,.pq-grid{grid-template-columns:minmax(0,1fr);gap:3rem}
   .pq-grid .head-group{position:static}
   .eng-row{grid-template-columns:1fr;gap:.7rem;padding:2.2rem 0}
-  .manifesto,.duo,.engagements,.pourquoi,.contact{padding:5.5rem 0}
+  .duo,.engagements,.pourquoi,.contact{padding:5.5rem 0}
   .hero-foot{font-size:.72rem;letter-spacing:0}
 }
 @media(prefers-reduced-motion:reduce){
@@ -179,7 +170,6 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
   </a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">☰</button>
   <ol>
-    <li><a href="#manifesto">Le projet</a></li>
     <li><a href="#duo">Le duo</a></li>
     <li><a href="#engagements">Engagements</a></li>
     <li><a href="#pourquoi">Pourquoi Cintu</a></li>
@@ -191,7 +181,6 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
   <div class="wrap">
     <svg class="hero-mark" viewBox="0 0 100 64" fill="none" aria-hidden="true"><path class="mark-base" d="M50 4 96 60 78 60 50 24 22 60 4 60Z"/><path class="gold-path" d="M62 38 96 60 40 60Z"/></svg>
     <h1>Repreneurs de long terme.</h1>
-    <p>Nous reprenons une PME française pour la diriger et la faire grandir, sans horizon de revente, aux côtés de son cédant et de ses équipes.</p>
   </div>
   <div class="hero-foot">
     <span>Cintu Transmission</span>
@@ -199,22 +188,9 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
   </div>
 </section>
 
-<section class="manifesto" id="manifesto">
-  <div class="wrap">
-    <span class="eyebrow">Le projet</span>
-    <p>Cintu Transmission est le <strong>projet de vie de deux amis de plus de vingt ans</strong>, aux profils hautement complémentaires. Forts d'une expérience en PME et en investissement, nous proposons de <strong>racheter une entreprise française et d'en prendre la direction</strong>, avec une phase d'accompagnement du cédant, pour <strong>une transition sereine, pérenne et humaine</strong>. Nous sommes soutenus par un groupe d'investisseurs et d'entrepreneurs de premier plan, source certaine et saine de financement en capitaux propres.</p>
-  </div>
-</section>
-
 <section class="duo" id="duo">
   <div class="wrap">
-    <div class="duo-head">
-      <div class="head-group">
-        <h2>Deux profils, une direction.</h2>
-        <span class="eyebrow">Le duo</span>
-      </div>
-      <p>Vingt ans d'amitié, des parcours complémentaires en opérations et en investissement, et une ambition commune&nbsp;: diriger une PME française et l'inscrire dans la durée.</p>
-    </div>
+    <span class="eyebrow">Le duo</span>
     <div class="duo-grid">
       <article class="profil">
         <figure><img src="photo_AB.jpg" alt="Amour Buidine" style="object-position:60% 25%"></figure>
@@ -237,16 +213,15 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
 <section class="engagements" id="engagements">
   <div class="wrap">
     <div class="head-group">
-      <h2>Six engagements pour pérenniser une PME française.</h2>
+      <h2>Cinq engagements pour pérenniser une PME française.</h2>
       <span class="eyebrow">Notre approche</span>
     </div>
     <div>
       <div class="eng-row"><b>01</b><h3>Protéger les équipes</h3><p>Les intérêts des employés d'abord&nbsp;: nous privilégions la croissance à la réduction des coûts.</p></div>
       <div class="eng-row"><b>02</b><h3>Respecter l'héritage</h3><p>La culture et les valeurs de la société sont préservées. Ces fondations portent le futur de l'entreprise.</p></div>
-      <div class="eng-row"><b>03</b><h3>Une équipe dirigeante claire</h3><p>Les repreneurs deviennent actionnaires majoritaires et conservent une grande autonomie. Aucune zone d'ombre.</p></div>
-      <div class="eng-row"><b>04</b><h3>Une transition saine</h3><p>Une évolution, pas une révolution, avec une période d'accompagnement du cédant, essentielle au projet.</p></div>
-      <div class="eng-row"><b>05</b><h3>Le long terme, vraiment</h3><p>Aucun horizon de liquidité. Notre engagement se compte en décennies, pas en cycles de fonds.</p></div>
-      <div class="eng-row"><b>06</b><h3>Des valeurs fortes</h3><p>Un projet de vie porté par deux amis&nbsp;: humilité, positivité, résilience et discipline.</p></div>
+      <div class="eng-row"><b>03</b><h3>Une transition saine</h3><p>Une évolution, pas une révolution, avec une période d'accompagnement du cédant, essentielle au projet.</p></div>
+      <div class="eng-row"><b>04</b><h3>Le long terme, vraiment</h3><p>Aucun horizon de liquidité. Notre engagement se compte en décennies, pas en cycles de fonds.</p></div>
+      <div class="eng-row"><b>05</b><h3>Des valeurs fortes</h3><p>Humilité, positivité, résilience et discipline.</p></div>
     </div>
   </div>
 </section>
@@ -261,7 +236,6 @@ footer{border-top:1px solid var(--line);padding:2.4rem 5vw;display:flex;justify-
       <div>
         <div class="pq-item"><h3>Une approche humaine</h3><p>Une reprise fondée sur la relation et un fort alignement des intérêts entre cédant, repreneurs et équipes.</p></div>
         <div class="pq-item"><h3>Clarté et confiance</h3><p>Le cédant bâtit sa relation directement avec la future équipe dirigeante, sans intermédiaire, sans surprise.</p></div>
-        <div class="pq-item"><h3>Expérience opérationnelle</h3><p>Un duo aux profils ultra-complémentaires, avec une expérience forte en PME comme en investissement.</p></div>
         <div class="pq-item"><h3>Savoir-faire transactionnel</h3><p>Un processus maîtrisé qui minimise les risques d'échec et la perte de temps pour toutes les parties.</p></div>
         <div class="pq-item"><h3>Un financement solide</h3><p>Un groupe d'apporteurs de fonds propres de premier plan, permettant d'offrir une valorisation attractive au cédant.</p></div>
       </div>
